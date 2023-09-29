@@ -1,0 +1,24 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.texto {
+  color: #a92337AA;
+  font-size: 21px;
+  font-family:"Verdana";
+  
+}
+
+.jogos {
+  color: #2f4b20AA;
+  font-size: 30px;
+  font-family: "Arial";
+}
+
+.jogadores {
+  color: #2f4b20AA;
+  font-size: 30px;
+  font-family: "Arial";
+}
+

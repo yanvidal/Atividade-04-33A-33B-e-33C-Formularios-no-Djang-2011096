@@ -1,0 +1,22 @@
+<h1> {{type}} Jogos</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label> Times: </label>
+    <input name ="times" value= {{jogo.times}}>
+  </div>
+  <div>
+    <label> Placar: </label>
+    <input name="placar" value= "{{jogo.placar}}">
+  </div>
+  <div>
+    <label> Situação: </label>
+    <input name= "situacao" value= "{{jogo.situacao}}">
+  </div>
+  <div>
+    <label> Release data: </label>
+    <input type="number" name="release_date" value= "{{jogo.release_date}}">
+  </div>
+  <input type="submit" value="Registrar">
+</form>

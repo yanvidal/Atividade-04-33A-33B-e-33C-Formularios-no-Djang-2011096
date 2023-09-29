@@ -1,0 +1,138 @@
+<!-- https://docs.djangoproject.com/en/4.2/intro/tutorial06/ -->
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Yan Pereira da Silva Vidal</title>
+
+
+  <link  href="{% static 'styles.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <h1>A Histórica Retomada Do Fluminense Futebol Clube</h1>
+  <img 
+    src="{% static 'images/flu.jpg' %}"><br>
+  
+
+  <h3>Contextualização:</h3>
+  <p class="texto">
+    No ano de 2009, matemáticos apontavam o Fluminense praticamente rebaixado para a série B de 2010. Muitos falvam em 95,96, até 98% de risco de cair para segunda divisão.
+    Faltando pouco mais de 10 rodadas para o fim do campeonato, Cuca assumiu o time, e junto de Fred e Conca, liderou aquele time que conseguiria um dos feitos mais absurdos de todos os tempos.<br><br></p>
+
+  <h3> Anos Seguintes:</h3>
+  <p class="texto">
+    O feito por si só já era importante, uma, senão a arrancada mais impressionante da história do Brasileirão de pontos corridos. Mas se torna ainda mais, visto que nos anos seguintes o time das laranjeiras se sagraria Campeão Brasileiro de 2010 e 2012, além do Campeonato Carioca do mesmo.
+    Pela primeira vez na história um time que brigou para não cair fora campeão no ano seguinte.
+    <br>
+  <ul class="jogos">
+    <b>Veja os jogos marcantes que encerraram tais campanhas:</b>
+  
+  
+    <!--<li> Coritiba 1x1 Fluminense<sub>Fuga do Rebaixamento 2009</sub></li>
+    <li> Fluminense 1x0 Guarani<sub>Campeão Brasileiro 2010</sub></li>
+    <li> Fluminense 4x1 Botafogo<sub>Campeão Carioca 2012</sub></li>
+    <li> Palmeiras 2x3 Fluminense<sub>Campeão Brasileiro 2012</sub></li><br><br>-->
+    <ol>
+    {% for jogo in jogos %}
+    <li>{{jogo.times}}<a href="/jogos/update/{{ jogo.id}}">Atualizar</a><a href="/jogos/delete/{{ jogo.id}}">Deletar</a></li>
+    {% endfor %}
+  </ol>
+  <a href= "/jogos"> Adicionar novo jogo </a>
+
+  </ul>
+  </p>
+
+
+  <h3>Jogadores Marcantes:</h3>
+  <p class="texto">
+    Ao longo desses 4 intensos anos, muitos jogadores deixaram sua marca registrada na história desse clube gigantesco.
+    Como é de se esperar no futebol brasileiro, apesar de somente 4 anos, muitos jogadores iam e vinham...
+    Mas durante esse tempo, muitos permaneceram e colocaram seu nome na estante do Fluminense Futebol Clube.
+    Dentre alguns jogadores neste tempo, podemos citar:
+  <!--><ul class="texto">
+    <li> Fred </li>
+    <li> Conca </li>
+    <li> Deco </li>
+    <li> Thiago Neves </li>
+    <li> Gum </li>
+    <li> Diego Cavalieri </li>
+  </ul>-->
+  <a href= "/jogadores"> Adicionar novos jogadores </a>
+</select>
+  <ol>
+    {% for jogador in jogadores %}
+    <li>{{jogador.jogadores}}<a href="/jogadores/update/{{ jogador.id}}">Atualizar</a><a href="/jogadores/delete/{{ jogador.id}}">Deletar</a>></li>
+    {% endfor %}
+  </ol>
+  </p>
+  <caption>Estatísticas desses jogadores pelo Fluminense:</caption> <br><br>
+  
+    <table border="1">
+    
+    
+      <thead>
+      
+        <tr class="jogadores">
+        
+          <th>Nome</th>
+          <th>Jogos</th>
+          <th>Gols</th>
+          <th>Assistencias</th>
+          <th>Posição</th>
+        </tr>
+        <tr class= "jogadores">
+          <td>Fred</td>
+          <td>382</td>
+          <td>199</td>
+          <td>45</td>
+          <td>Atacante</td>
+        </tr>
+        <tr class= "jogadores">
+          <td>Conca</td>
+          <td>269</td>
+          <td>55</td>
+          <td>63</td>
+          <td>Meio Campo</td>
+        </tr>
+        <tr class= "jogadores">
+          <td>Deco</td>
+          <td>91</td>
+          <td>7</td>
+          <td>21</td>
+          <td>Meio Campo</td>
+        </tr>
+        <tr class="jogadores">
+          <td>Thiago Neves</td>
+          <td>174</td>
+          <td>50</td>
+          <td>29</td>
+          <td>Meio Campo</td>
+        </tr>
+        <tr class="jogadores">
+          <td>Gum</td>
+          <td>414</td>
+          <td>29</td>
+          <td>4</td>
+          <td>Zagueiro</td>
+        </tr>
+        <tr class="jogadores">
+          <td>Diego Cavalieri</td>
+          <td>352</td>
+          <td>0</td>
+          <td>0</td>
+          <td>Goleiro</td>
+        </tr>
+      </thead>
+    </table>
+  </tr> <br><br> 
+  
+  <p class="texto"><i>Saber mais sobre esse time gigantesco:</i> <a
+      href="https://www.fluminense.com.br/" target="_blank">Fluminense</a>
+  </p>
+
+</body>
+
+</html>

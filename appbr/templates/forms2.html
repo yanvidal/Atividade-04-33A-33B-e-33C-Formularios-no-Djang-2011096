@@ -1,0 +1,30 @@
+<h1> {{type}} Jogadores</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label> Jogadores: </label>
+    <input name ="jogadores" value= "{{jogador.jogadores}}">
+  </div>
+  <div>
+    <label> Frequencia: </label>
+    <select name="frequencia" value= "{{jogador.frequencia}}">
+  {% for freq in frequencia %}
+    <option value="{{ freq.0 }}">{{ freq.1 }}</option>
+  {% endfor %}
+</select>
+  </div>
+  <div>
+    <label> Posicao: </label>
+    <select name="posicao" value= "{{jogador.posicao}}">
+  {% for pos in posicao %}
+    <option value="{{ pos.0 }}">{{ pos.1 }}</option >
+  {% endfor %}
+</select>
+  </div>
+  <div>
+    <label> Gols: </label>
+    <input type="number" name="gols" value= "{{jogador.gols}}">
+  </div>
+  <input type="submit" value="Registrar">
+</form>
