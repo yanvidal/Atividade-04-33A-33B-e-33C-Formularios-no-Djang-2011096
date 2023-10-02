@@ -25,5 +25,4 @@ urlpatterns = [
     path('jogadores', views.create_jogadores),
     path('jogadores/update/<id>', views.update_jogadores),
     path('jogadores/delete/<id>', views.delete_jogadores),
-    path('admin/', admin.site.urls),
 ]
